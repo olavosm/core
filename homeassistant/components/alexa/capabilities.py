@@ -289,10 +289,13 @@ class Alexa(AlexaCapability):
         "en-US",
         "es-ES",
         "es-MX",
+        "es-US",
         "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def name(self):
@@ -314,9 +317,14 @@ class AlexaEndpointHealth(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, hass, entity):
@@ -364,9 +372,14 @@ class AlexaPowerController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def name(self):
@@ -473,9 +486,14 @@ class AlexaSceneController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, entity, supports_deactivation):
@@ -502,6 +520,9 @@ class AlexaBrightnessController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
         "hi-IN",
         "it-IT",
@@ -548,6 +569,9 @@ class AlexaColorController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
         "hi-IN",
         "it-IT",
@@ -599,6 +623,9 @@ class AlexaColorTemperatureController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
         "hi-IN",
         "it-IT",
@@ -647,9 +674,13 @@ class AlexaPercentageController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def name(self):
@@ -700,6 +731,7 @@ class AlexaSpeaker(AlexaCapability):
         "fr-FR",  # Not documented as of 2021-12-04, see PR #60489
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def name(self):
@@ -757,6 +789,7 @@ class AlexaStepSpeaker(AlexaCapability):
         "es-ES",
         "fr-FR",  # Not documented as of 2021-12-04, see PR #60489
         "it-IT",
+        "pt-BR",
     }
 
     def name(self):
@@ -804,7 +837,23 @@ class AlexaInputController(AlexaCapability):
     https://developer.amazon.com/docs/device-apis/alexa-inputcontroller.html
     """
 
-    supported_locales = {"de-DE", "en-AU", "en-CA", "en-GB", "en-IN", "en-US"}
+    supported_locales = {
+        "de-DE",
+        "en-AU",
+        "en-CA",
+        "en-GB",
+        "en-IN",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
+        "fr-FR",
+        "hi-IN",
+        "it-IT",
+        "ja-JP",
+        "pt-BR",
+    }
 
     def name(self):
         """Return the Alexa API name of this interface."""
@@ -822,8 +871,6 @@ class AlexaInputController(AlexaCapability):
         """Return list of supported inputs."""
         input_list = []
         for source in source_list:
-            if not isinstance(source, str):
-                continue
             formatted_source = (
                 source.lower().replace("-", "").replace("_", "").replace(" ", "")
             )
@@ -849,9 +896,14 @@ class AlexaTemperatureSensor(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, hass, entity):
@@ -913,11 +965,18 @@ class AlexaContactSensor(AlexaCapability):
         "de-DE",
         "en-AU",
         "en-CA",
+        "en-GB",
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
+        "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, hass, entity):
@@ -961,9 +1020,15 @@ class AlexaMotionSensor(AlexaCapability):
         "de-DE",
         "en-AU",
         "en-CA",
+        "en-GB",
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
+        "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
         "pt-BR",
@@ -1014,7 +1079,11 @@ class AlexaThermostatController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
         "pt-BR",
@@ -1135,6 +1204,8 @@ class AlexaPowerLevelController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "fr-CA",
         "fr-FR",
         "it-IT",
         "ja-JP",
@@ -1268,10 +1339,13 @@ class AlexaModeController(AlexaCapability):
         "en-US",
         "es-ES",
         "es-MX",
+        "es-US",
         "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, entity, instance, non_controllable=False):
@@ -1454,10 +1528,13 @@ class AlexaRangeController(AlexaCapability):
         "en-US",
         "es-ES",
         "es-MX",
+        "es-US",
         "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def __init__(self, entity, instance, non_controllable=False):
@@ -1699,8 +1776,10 @@ class AlexaToggleController(AlexaCapability):
         "en-US",
         "es-ES",
         "es-MX",
+        "es-US",
         "fr-CA",
         "fr-FR",
+        "hi-IN",
         "it-IT",
         "ja-JP",
         "pt-BR",
@@ -1769,6 +1848,8 @@ class AlexaChannelController(AlexaCapability):
         "en-US",
         "es-ES",
         "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
         "hi-IN",
         "it-IT",
@@ -1802,6 +1883,7 @@ class AlexaDoorbellEventSource(AlexaCapability):
         "hi-IN",
         "it-IT",
         "ja-JP",
+        "pt-BR",
     }
 
     def name(self):
@@ -1929,7 +2011,23 @@ class AlexaEqualizerController(AlexaCapability):
     https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-equalizercontroller.html
     """
 
-    supported_locales = {"de-DE", "en-IN", "en-US", "es-ES", "it-IT", "ja-JP", "pt-BR"}
+    supported_locales = {
+        "de-DE",
+        "en-AU",
+        "en-CA",
+        "en-GB",
+        "en-IN",
+        "en-US",
+        "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
+        "fr-FR",
+        "hi-IN",
+        "it-IT",
+        "ja-JP",
+        "pt-BR",
+    }
     VALID_SOUND_MODES = {
         "MOVIE",
         "MUSIC",
@@ -2028,6 +2126,9 @@ class AlexaCameraStreamController(AlexaCapability):
         "en-IN",
         "en-US",
         "es-ES",
+        "es-MX",
+        "es-US",
+        "fr-CA",
         "fr-FR",
         "hi-IN",
         "it-IT",
